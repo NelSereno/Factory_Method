@@ -13,7 +13,7 @@ class ConcreteProductB: public Product{};
 
 class Creator{
 	public:
-	Product* createProduct(){
+        virtual Product* createProduct(){
 	    return NULL;
 	};
 	void someOperation(){
@@ -24,14 +24,14 @@ class Creator{
 
 class ConcreteCreatorA: public Creator{
 	public:
-	Product* createProduct(){
+	Product* createProduct() override{
 		return new ConcreteProductA();
 	};
 };
 
 class ConcreteCreatorB: public Creator{
 	public:
-	Product* createProduct(){
+	Product* createProduct() override{
 		return new ConcreteProductB();
 	};
 };
